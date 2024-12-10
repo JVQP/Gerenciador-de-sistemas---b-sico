@@ -1,0 +1,83 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/views/pagina_principal">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opções
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/views/pagina_usuario">Cadastrar Usuario</a></li>
+              <li><a class="dropdown-item" href="/views/pagina_tarefas">Registrar Tarefas</a></li>
+              <li>
+              <li><a class="dropdown-item" href="#">Tarefas em andamento</a></li>
+              <li>
+              <li><a class="dropdown-item" href="#">Tarefas Concluidas</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Procurar tarefas" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Procurar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+
+<div class="tabela">
+
+<table>
+ <h1>Tarefas</h1>
+  <tr>
+    <th></th>
+    <th>Descrição da Tarefa</th>
+    <th>Data</th>
+    <th>Situação</th>
+    <th>Usuário</th>
+    <th>Concluido/Em andamento</th>
+    <th></th>
+    <th></th>
+    
+  </tr>
+ 
+{{#each tarefas}}
+<tr>
+  <form action="/" method="get">
+  <td><input type="hidden" value="{{this.id}}"></td>
+  <td><h6>{{this.descricao}}</h6></td>
+  <td>{{this.data}}</td>
+  <td>{{this.situacao}}</td> 
+  <td>{{this.tarefa_usuario}}</td> 
+  <td>{{this.conclusao}}</td>
+  <td><a href="/editar_tarefa/{{this.id}}"><button type="button" class="btn btn-warning">Editar</button></td></a>
+  <td><a href="/remover/{{this.id}}"><button type="button" class="btn btn-danger">Remover</button></a></td>
+</form>
+</tr>
+{{/each}}
+
+</table>
+</div>
+</main>

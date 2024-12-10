@@ -1,0 +1,98 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/views/pagina_principal">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Opções
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/views/pagina_usuario">Cadastrar Usuario</a></li>
+                            <li><a class="dropdown-item" href="#">Registrar Tarefas</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">Tarefas em andamento</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">Tarefas Concluidas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Procurar tarefas" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Procurar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{{#each tarefas}}
+<main class="formulario_tarefas">
+    <h1>Editar tarefa</h1>
+
+    <form action="/editar" method="post" class="row g-3">
+        
+            <input type="hidden" class="form-control" id="" name="id" value="{{this.id}}">
+        
+
+        <div class="col-md-6">
+            <label for="Descricao" class="form-label">Descrição da tarefa</label>
+            <input type="text" class="form-control" id="inputDescricao" name="editar_descricao" value="{{this.descricao}}">
+        </div>
+        <div class="col-md-6">
+            <label for="Data" class="form-label">Data</label>
+            <input type="date" class="form-control" id="Data" name="editar_data">
+        </div>
+        <div class="col-md-4">
+            <label for="Situacao" class="form-label">Situação</label>
+            <select id="Situacao" class="form-select" name="editar_situacao" value = "{{this.situacao}}">
+                <option selected>Situação...</option>
+                <option>Crítica</option>
+                <option>Moderado</option>
+                <option>Leve</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="usuario" class="form-label">Tarefas por usuário</label>
+             <input type="text" class="form-control" name="editar_usuario" value="{{this.tarefa_usuario}}">
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="concluido_andamento" class="form-label">Concluido/Em andamento</label>
+            <select id="concluido_andamento" class="form-select" name="editar_concluido_andamento" value = {{this.conclusao}}>
+                <option selected>Escolha...</option>
+                <option>Em andamento</option>
+                <option>Concluido</option>
+            </select>    
+    </div>
+
+     <div class="col-12">
+      <button type="submit" class="btn btn-primary">Editar</button>
+      <button type="reset" class="btn btn-warning">Limpar</button>
+    </div>
+  
+    </form>
+      {{/each}}   
+  

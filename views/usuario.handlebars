@@ -1,0 +1,151 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/views/pagina_principal">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opções
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/views/pagina_usuario">Cadastrar Usuario</a></li>
+              <li><a class="dropdown-item" href="/views/pagina_tarefas">Registrar Tarefas</a></li>
+              <li>
+              <li><a class="dropdown-item" href="#">Tarefas em andamento</a></li>
+              <li>
+              <li><a class="dropdown-item" href="#">Tarefas Concluidas</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Procurar tarefas" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Procurar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+{{! FICHA DE CADASTRO}}
+
+
+<main class="formulario_usuario">
+<h1>Ficha de cadastro</h1>
+
+  <form action="/usuario" method="post" class="row g-3">
+    <div class="col-md-6">
+      <label for="inputNome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="inputNome" name="nome">
+    </div>
+    <div class="col-md-6">
+      <label for="inputSobrenome" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" id="inputSobrenome" name="sobrenome">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" name="email">
+    </div>
+    <div class="col-md-6">
+      <label for="inputUsuario" class="form-label">Usuario</label>
+      <input type="text" class="form-control" id="inputUsuario" name="usuario">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCPF" class="form-label">CPF</label>
+      <input type="text" class="form-control" id="inputCPF" name="cpf">
+    </div>
+    <div class="col-md-6">
+      <label for="inoutRG" class="form-label">Rg</label>
+      <input type="text" class="form-control" id="inputRG" name="rg">
+    </div>
+    <div class="col-md-6">
+      <label for="inputSenha" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="inputSenha" name="senha">
+    </div>
+    <div class="col-md-6">
+      <label for="inputConfirmar" class="form-label">Confirmar senha</label>
+      <input type="password" class="form-control" id="inputConfirmar" name="confirmar_senha">
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="inputEndereco" placeholder="Apartment, Casa..." name="endereco">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="inputCidade" name="cidade">
+    </div>
+    <div class="col-md-4">
+      <label for="inputEstado" class="form-label">Estado</label>
+      <select id="inputEstado" class="form-select" name="estado">
+        <option selected>Escolhe...</option>
+        <option>Acre - AC</option>
+        <option>Alagoas - AL</option>
+        <option>Amazonas - AM</option>
+        <option>Amapá - AP</option>
+        <option>Bahia - BA</option>
+        <option>Ceará - CE</option>
+        <option>Distrito Federal - DF</option>
+        <option>Espírito Santo - ES</option>
+        <option>Goiás - GO</option>
+        <option>Maranhão - MA</option>
+        <option>Minas Gerais - MG</option>
+        <option>Mato Grosso do Sul - MS</option>
+        <option>Mato Grosso - MT</option>
+        <option>Pará - PA</option>
+        <option>Paraíba - PB</option>
+        <option>Pernambuco - PE</option>
+        <option>Piauí - PI</option>
+        <option>Paraná - PR</option>
+        <option>Rio de Janeiro - RJ</option>
+        <option>Rio Grande do Norte - RN</option>
+        <option>Rondônia - RO</option>
+        <option>Roraima - RR</option>
+        <option>Rio Grande do Sul - RS</option>
+        <option>Santa Catarina - SC</option>
+        <option>Sergipe - SE</option>
+        <option>São Paulo - SP</option>
+        <option>Tocantins - TO</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputCEP" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="inputCEP" name="cep">
+    </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="reset" class="btn btn-primary">Limpar</button>
+    </div>
+
+  </form>
+
+</main>
+
+
+
+
+
+
+
+

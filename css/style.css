@@ -1,0 +1,105 @@
+body{
+    background-image: url('/imagens/15678435-conceito-de-ilustracao-de-gerenciamento-de-tarefas-uma-ilustracao-plana-isolada-no-fundo-branco-vetor.jpg');
+    background-repeat: no-repeat;
+    
+}
+
+main{
+    margin-top: 200px;
+}
+
+
+.container{
+    width: 500px;
+    height: 350px;
+    background-color: cornsilk;
+    border-style: outset;
+    border-radius: 30px;
+}
+
+form, label{
+    font-family: Mirza;
+
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    padding: 30px;
+    font-family: Unbounded;
+    
+}
+
+.botao{
+    text-align: center;
+}
+
+img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+nav{
+    background-color: rgb(68, 114, 199);
+}
+
+.container-fluid{
+
+height: 100px;
+}
+/* ESTLIZANDO CADASTRO DE USUÁRIO */
+
+.formulario_usuario{
+    width: 1000px;
+    margin-top: 169px;
+    margin-left: 220px;
+    color: black;
+    background-color: #ffffffcc;
+    
+   
+}
+
+.formulario_usuario, button{
+    padding: 20px;
+}
+
+/* ESTILIZANDO PAGINA DE REGISTRO DE TAREFAS*/
+
+.formulario_tarefas{
+    width: 1000px;
+    margin-top: 169px;
+    margin-left: 220px;
+    color: black;
+    background-color: #ffffffcc;
+}
+
+
+.formulario_tarefas, button{
+    padding: 20px;
+}
+
+
+/* ESTLIZAR VISUALIZAÇÃO DE TAREFAS PÁGINA PRINCIPAL  */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .tabela{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+  }

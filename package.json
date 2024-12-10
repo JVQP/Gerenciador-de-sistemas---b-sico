@@ -1,0 +1,25 @@
+{
+  "name": "gerenciamento---tarefas",
+  "version": "1.0.0",
+  "description": "gerenciamento-tarefas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "express-handlebars",
+    "node.js",
+    "e",
+    "mysql"
+  ],
+  "author": "João Vitor",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1",
+    "mysql2": "^3.11.4",
+    "sqlite3": "^5.1.7"
+  }
+}
