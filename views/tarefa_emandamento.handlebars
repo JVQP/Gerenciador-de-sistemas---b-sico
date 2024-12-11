@@ -45,55 +45,42 @@
 </nav>
 
 
-{{! FICHA PARA REGISTRAR TAREFAS}}
-
-<main class="formulario_tarefas">
-<h1>Adicionar Tarefas</h1>
-
-  <form action="/tarefa" method="post" class="row g-3">
-    <div class="col-md-6">
-      <label for="inputDescricao" class="form-label">Descrição da tarefa</label>
-      <input type="text" class="form-control" id="inputDescricao" name="descricao">
-    </div>
-    <div class="col-md-6">
-      <label for="inputData" class="form-label">Data</label>
-      <input type="date" class="form-control" id="inputData" name="data">
-    </div>
-    <div class="col-md-4">
-      <label for="inputSituacao" class="form-label">Situação</label>
-      <select id="inputSituacao" class="form-select" name="situacao">
-        <option selected>Situação...</option>
-        <option>Crítica</option>
-        <option>Moderado</option>
-        <option>Leve</option>
-      </select>
-    </div>
-
-  <div class="col-md-4">
-    <label for="usuario" class="form-label">Tarefas por usuário</label>
-    <select id="usuario" class="form-select" name="usuario">
-      <option>Usuário...</option>
-      {{#each usuarios}}
-        <option>{{this.nome}}</option>
-      {{/each}}
-    </select>
-  </div>
 
 
-   <div class="col-md-4">
-      <label for="concluido_andamento" class="form-label">Concluido/Em andamento</label>
-      <select id="concluido_andamento" class="form-select" name="concluido_andamento">
-        <option selected>Escolha...</option>
-        <option>Analisando</option>
-        <option>Concluido</option>
-      </select>
-    </div>
+<main>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Registrar</button>
-      <button type="reset" class="btn btn-warning">Limpar</button>
-    </div>
+    <div class="tabela">
 
-  </form>
+<table>
+ <h1>Tarefas</h1>
+  <tr>
+    <th></th>
+    <th>Descrição da Tarefa</th>
+    <th>Data</th>
+    <th>Situação</th>
+    <th>Usuário</th>
+    <th>Concluido</th>
+    <th></th>
+    <th></th>
+    
+  </tr>
+ 
+{{#each tarefas}}
+<tr>
+  <form action='/views/tarefa_andamento' method="get">
+  <td><input type="hidden" value="{{this.id}}"></td>
+  <td><h6>{{this.descricao}}</h6></td>
+  <td>{{this.data}}</td>
+  <td>{{this.situacao}}</td> 
+  <td>{{this.tarefa_usuario}}</td> 
+  <td>{{this.conclusao}}</td>
+  <td><a href="/editar_tarefa/{{this.id}}"><button type="button" class="btn btn-warning">Editar</button></td></a>
+  <td><a href="/remover/{{this.id}}"><button type="button" class="btn btn-danger">Remover</button></a></td>
+</form>
+</tr>
+{{/each}}
 
+</table>
+</div>
+<p class="aguardando">Aguardando tarefas</p>
 </main>

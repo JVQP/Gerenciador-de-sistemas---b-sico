@@ -89,7 +89,7 @@ function drop() {
 
 
 function DELETE(){
-    db.run("DELETE FROM usuarios", (err) => {
+    db.run("DELETE FROM tarefas", (err) => {
         if(!err) console.log("Dados da tabela removidos!");
         else console.log("Erro ao executar o comando SQL", err.message);
     })
@@ -273,8 +273,6 @@ app.get('/remover/:id', function (req, res) {
 })
 
 
-
-
 //--------------------------------------------------------}
 
 
@@ -317,9 +315,49 @@ app.post('/editar', function (req, res) {
 
 })
 
-
-
 //-----------------------------------------------}
+
+
+
+// --------------------ROTA DE TAREFA CONCLUIDA--------------------------- {
+
+app.get('/views/tarefas_concluidas', function(req, res) {
+
+db.all("SELECT descricao, data, situacao, tarefa_usuario, conclusao FROM tarefas WHERE conclusao = 'Concluido' ", (err, rows) => {
+    if(!err){
+        console.log("Resultado: ", rows)
+        return res.render('tarefa_concluida', {tarefas : rows})
+    } else{
+        console.log("Erro ao consultar a informação, ", err);
+    }
+})
+
+        
+})
+
+//------------------------------------------------------------------------- }
+
+
+
+
+// -------------------------- ROTA PARA TAREFA EM ANDAMENRTO -------------- {
+
+app.get('/views/tarefa_andamento', function(req, res){
+
+    db.all("SELECT descricao, data, situacao, tarefa_usuario, conclusao FROM tarefas WHERE conclusao = 'Analisando' ", (err, rows) => {
+        if(!err){
+            console.log("Resultado: ", rows)
+            return res.render('tarefa_emandamento', {tarefas : rows})
+        } else{
+            console.log("Erro ao consultar a informação, ", err);
+        }
+    })
+    
+
+
+})
+
+//--------------------------------------------------------------------------- }
 
 
 ////// ROTA DO SERVIDOR ////
