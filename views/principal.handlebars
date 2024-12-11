@@ -52,21 +52,21 @@
 <table>
  <h1>Tarefas</h1>
   <tr>
-    <th></th>
+    <th>Código</th>
     <th>Descrição da Tarefa</th>
     <th>Data</th>
     <th>Situação</th>
     <th>Usuário</th>
     <th>Concluido/Em andamento</th>
-    <th></th>
-    <th></th>
+    <th>Editar</th>
+    <th>Remover</th>
     
   </tr>
  
 {{#each tarefas}}
 <tr>
   <form action="/" method="get">
-  <td><input type="hidden" value="{{this.id}}"></td>
+  <td><h7>{{this.id}}</h7></td>
   <td><h6>{{this.descricao}}</h6></td>
   <td>{{this.data}}</td>
   <td>{{this.situacao}}</td> 
