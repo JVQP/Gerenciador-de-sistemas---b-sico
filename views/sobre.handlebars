@@ -44,40 +44,17 @@
   </div>
 </nav>
 
+
+
 <main>
 
-    <div class="tabela">
+<div class="conteudo">
 
-<table>
- <h1>Tarefas</h1>
-  <tr>
-    <th>Código</th>
-    <th>Descrição da Tarefa</th>
-    <th>Data</th>
-    <th>Situação</th>
-    <th>Usuário</th>
-    <th>Concluido</th>
-    <th>Editar</th>
-    <th>Remover</th>
-    
-  </tr>
- 
-{{#each tarefas}}
-<tr>
-  <form action="/views/tarefas_concluidas" method="get">
-  <td><h6>{{this.id}}</h6></td>
-  <td><h7>{{this.descricao}}</h7></td>
-  <td>{{this.data}}</td>
-  <td>{{this.situacao}}</td> 
-  <td>{{this.tarefa_usuario}}</td> 
-  <td>{{this.conclusao}}</td>
-  <td><a href="/editar_tarefa/{{this.id}}"><button type="button" class="btn btn-warning">Editar</button></td></a>
-  <td><a href="/remover/{{this.id}}"><button type="button" class="btn btn-danger">Remover</button></a></td>
-</form>
-</tr>
-{{/each}}
+    <p>Sistema desenvolvido com intuito do usuário gerenciar suas tarefas de rotina, seja pessoal ou 
+até mesmo para sua empresa. Esse foi um projeto básico desenvolvido por mim - João Vitor, estou estudando
+e me aprimorando, esse projeto está passando por algumas mudanças e aprimoramento a cada dia.
+    </p>
 
-</table>
 </div>
-<p class="aguardando">Aguardando tarefas</p>
+
 </main>

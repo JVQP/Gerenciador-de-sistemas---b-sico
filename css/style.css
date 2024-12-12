@@ -103,3 +103,13 @@ table {
     height: 100%;
     width: 100%;
   }
+
+
+  /*ESTILIZANDO A PÁGINA SOBRE*/
+
+
+  .conteudo{
+    background-color: aliceblue;
+    width: 500px;
+    margin: auto;
+  }
